@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> mp;
+        unordered_map<int, int>cmp;
+for(int i=0;i<nums.size();i++){
+        if(cmp.find(target - nums[i]) != cmp.end()){
+mp.push_back(cmp[target - nums[i]]);
+mp.push_back(i);
+return mp;
+        }
+
+      cmp[nums[i]] = i;
+ }
+return mp;
+}
+
+       
+};
